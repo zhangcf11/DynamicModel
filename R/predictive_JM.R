@@ -165,7 +165,7 @@ predictive_JM <- function(jointFit, data, method, formulas, random_effect_formul
             all_pred1 <- individual_JM_predict(jointFit1, test_data, Tstart = time_point, Dt = w)
             idd<-rownames(all_pred1)
             all_surv <- cbind(all_pred1, rep(i, nrow(all_pred1)), rep(time_point, nrow(all_pred1)),idd)
-            colnames(all_surv)[c(4, 5)] <- c("num", "time_points","id")
+            colnames(all_surv)[c(4, 5,6)] <- c("num", "time_points","id")
             all_pred <- rbind(all_pred, all_surv)
           }
         }
@@ -510,4 +510,5 @@ calibration_re_JM<-function(object=NULL,data=NULL,Tstart,Dt=NULL,Thoriz=NULL,all
   }
   return(list(cal_results=cal_results,cuts=cuts))
 }
+
 
