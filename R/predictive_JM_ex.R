@@ -19,7 +19,7 @@
 #'   \item{calibration_slope_with_ci: Calibration slope with confidence intervals}
 #'   \item{all_cal_actual: Complete calibration results}
 #' }
-#' @importFrom JMbayes2 tvC_index tvBrier tvAUC
+#' @importFrom JMbayes2 tvBrier tvAUC
 #' @export
 predictive_JM_ex<-function(object,newdata,seq_len,w, n_group = 10){
   c_index<-Brier_score<-AUC<-c()
@@ -44,3 +44,4 @@ predictive_JM_ex<-function(object,newdata,seq_len,w, n_group = 10){
     all_cal_autual = all_cal_autual
   ))
 }
+
