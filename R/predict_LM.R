@@ -27,9 +27,9 @@ predict_LM<-function(object,newdata){
     library(dynpred)
   }
   # Input validation
-  if (!inherits(object, "LMf")) {
-    stop("object must be of class 'LMf'")
-  }
+if (!inherits(object, "LMf") && !inherits(object, "VS_LM")) {
+  stop("object must be of class 'LMf' or 'VS_LM'")
+}
 
   if (missing(newdata) || !is.data.frame(newdata)) {
     stop("newdata must be a data.frame")
@@ -83,3 +83,4 @@ predict_LM<-function(object,newdata){
     }
   out
 }
+
