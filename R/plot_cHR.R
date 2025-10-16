@@ -117,21 +117,6 @@ if (!inherits(object, "LMf") && !inherits(object, "VS_LM")) {
     par(mfrow = c(n_row, n_col))
   }
 
-  # Load required packages
-  if (!require("msm", quietly = TRUE)) {
-    install.packages("msm")
-    library(msm)
-  }
-
-  # Input validation
-  if (!inherits(object, "LMf")) {
-    stop("object must be of class 'LMf'")
-  }
-
-  if (missing(covars) || length(covars) == 0) {
-    stop("covars must be specified with at least one covariate name")
-  }
-
   # Extract model components
   fm <- object$Model
   bet <- fm$coefficients
@@ -299,4 +284,5 @@ if (!inherits(object, "LMf") && !inherits(object, "VS_LM")) {
   }
 
 }
+
 
