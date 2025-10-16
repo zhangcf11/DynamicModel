@@ -79,9 +79,9 @@ plot_cHR <- function(object, covars, conf_int = TRUE, IDlegend = NULL,
   }
 
   # Input validation
-  if (!inherits(object, "LMf")) {
-    stop("object must be of class 'LMf'")
-  }
+if (!inherits(object, "LMf") && !inherits(object, "VS_LM")) {
+  stop("object must be of class 'LMf' or 'VS_LM'")
+}
 
   if (missing(covars) || length(covars) == 0) {
     stop("covars must be specified with at least one covariate name")
@@ -299,3 +299,4 @@ plot_cHR <- function(object, covars, conf_int = TRUE, IDlegend = NULL,
   }
 
 }
+
