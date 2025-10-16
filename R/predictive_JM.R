@@ -20,7 +20,7 @@
 #' @param n_group number of groups (or points) for the calibration curve.Default is 10.
 #' @importFrom caret createFolds
 #' @importFrom survival coxph
-#' @importFrom JMbayes2 jm tvAUC tvC_index tvBrier
+#' @importFrom JMbayes2 jm tvAUC tvBrier
 #' @export
 #' @return A list containing:
 #' \itemize{
@@ -513,4 +513,5 @@ calibration_re_JM<-function(object=NULL,data=NULL,Tstart,Dt=NULL,Thoriz=NULL,all
   }
   return(list(cal_results=cal_results,cuts=cuts))
 }
+
 
