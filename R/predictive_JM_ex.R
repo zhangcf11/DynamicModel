@@ -33,7 +33,7 @@ predictive_JM_ex<-function(object,newdata,seq_len,w, n_group = 10){
                                       Tstart =timepoint, Dt = w, n_groups = n_group)$cal_results
     all_cal_autual<-rbind(all_cal_autual,cal_autual_all)
   }
-  calibration_slpoe_with_ci <- calculate_calibration_slope(all_cal_autual)
+  calibration_slope_with_ci <- calculate_calibration_slope(all_cal_autual)
   # Return results
   return(list(
     time = seq_len,
@@ -44,4 +44,5 @@ predictive_JM_ex<-function(object,newdata,seq_len,w, n_group = 10){
     all_cal_autual = all_cal_autual
   ))
 }
+
 
