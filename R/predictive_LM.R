@@ -202,7 +202,7 @@ predictive_LM <- function(object, method, n, K, seed, r, n_group = 10) {
         }
 
         km_fit <- survfit(Surv(auctual_time, auctual_status) ~ 1, data = bin_data)
-        km_summary <- summary(km_fit, times = w)
+        km_summary <- summary(km_fit, times = w, extend = TRUE)
         actual_survival <- ifelse(length(km_summary$surv) > 0, km_summary$surv[1], NA)
         se_survival <- ifelse(length(km_summary$std.err) > 0, km_summary$std.err[1], NA)
 
@@ -713,4 +713,5 @@ cal_auc<-function(model,data,pred.t,time,status){
   auc0<-auc$AUC
   return(auc0)
 }
+
 
