@@ -56,6 +56,7 @@ plot_cHR <- function(object, covars, conf_int = TRUE, IDlegend = NULL,
                      main_title_font = 7,
                      main_title_cex = 1.5,
                      main_title_line = 1,
+                     cex.axis=1.5,
                      xlab_font = 7,
                      xlab_cex = 1.5,
                      xlab_line = 2.6,
@@ -106,8 +107,8 @@ if (!inherits(object, "LMf") && !inherits(object, "VS_LM")) {
   results <- list()
 
   # Save current graphical parameters
-  old_par <- par(no.readonly = TRUE)
-  on.exit(par(old_par))
+  #old_par <- par(no.readonly = TRUE)
+  #on.exit(par(old_par))
 
   # Set graphical parameters for multiple plots if needed
   if (length(covars) > 1) {
@@ -230,7 +231,7 @@ if (!inherits(object, "LMf") && !inherits(object, "VS_LM")) {
     # Create plot
     plot(t, vari, type = "l", lwd = 6,
          xlim = c(min(sl), max(sl)), ylim = ylim,
-         bty = "l", xlab = "", ylab = "", cex.axis = 1.5, ...)
+         bty = "l", xlab = "", ylab = "", cex.axis = cex.axis, ...)
 
     # Add ID legend if provided with parameterized settings
     if (!is.null(IDlegend)) {
@@ -284,5 +285,6 @@ if (!inherits(object, "LMf") && !inherits(object, "VS_LM")) {
   }
 
 }
+
 
 
