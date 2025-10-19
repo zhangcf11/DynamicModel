@@ -136,10 +136,6 @@ if (!inherits(object, "LMf") && !inherits(object, "VS_LM")) {
   # Initialize result list
   results <- list()
 
-  # Save current graphical parameters
-  old_par <- par(no.readonly = TRUE)
-  on.exit(par(old_par))
-
   # Set graphical parameters for multiple plots if needed
   if (length(covars) > 1) {
     n_plots <- length(covars)
@@ -285,6 +281,7 @@ if (!inherits(object, "LMf") && !inherits(object, "VS_LM")) {
   }
 
 }
+
 
 
 
